@@ -18,6 +18,7 @@ export default {
 			default: 30,
 		},
 	},
+	
 };
 </script>
 
