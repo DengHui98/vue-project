@@ -1,6 +1,6 @@
 <template>
 	<i
-		class="iconfont"
+		class="iconfont icon-container"
 		:class="iconClass"
 	></i>
 </template>
@@ -13,8 +13,11 @@ const classMap = {
 	chaxun: "icon-chaxun",
 	break: "icon-xiangzuozhuan",
 	arrow: "icon-fenyejiantou-shangyiye",
-	doubleArrow: "icon-fenyejiantou-shouye"
+	doubleArrow: "icon-fenyejiantou-shouye",
+	empty: "icon-kong",
 };
+export const types = Object.keys(classMap);
+
 export default {
 	props: {
 		type: {
@@ -32,5 +35,5 @@ export default {
 </script>
 
 <style scoped>
-@import url(//at.alicdn.com/t/c/font_4581694_yuadmxd2rca.css);
+@import url(//at.alicdn.com/t/c/font_4581694_2dwwctil7zp.css);
 </style>

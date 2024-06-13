@@ -1,8 +1,12 @@
 <template>
-	<Pager></Pager>
+	<Pager
+		:current="current"
+		:total="total"
+		@changePage="handleChangePage"
+	></Pager>
 </template>
 <script>
-import Pager from "./components/Empty/index.vue";
+import Pager from "./index.vue";
 export default {
 	components: {
 		Pager,
@@ -21,5 +25,3 @@ export default {
 	},
 };
 </script>
-
-<style></style>
