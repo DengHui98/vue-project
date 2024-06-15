@@ -7,14 +7,19 @@
 
 <script>
 const classMap = {
-	home: "icon-zhuye",
+	home: "icon-shouye",
 	qq: "icon-qq",
 	weixin: "icon-weixin",
-	chaxun: "icon-chaxun",
+	email: "icon-email",
 	break: "icon-xiangzuozhuan",
 	arrow: "icon-fenyejiantou-shangyiye",
 	doubleArrow: "icon-fenyejiantou-shouye",
 	empty: "icon-kong",
+	github: "icon-github",
+	about: "icon-guanyu",
+	bolg: "icon-bokeyuan",
+	message: "icon-liuyanban-05",
+	project: "icon-xiangmu_xiangmuguanli",
 };
 export const types = Object.keys(classMap);
 
@@ -35,5 +40,5 @@ export default {
 </script>
 
 <style scoped>
-@import url(//at.alicdn.com/t/c/font_4581694_2dwwctil7zp.css);
+@import url(//at.alicdn.com/t/c/font_4581694_pe98d16lc5i.css);
 </style>
