@@ -59,7 +59,6 @@ export default {
 	width: 100%;
 	height: 100%;
 	position: relative;
-	color: @words;
 	font-size: 14px;
 
 	li {

@@ -39,6 +39,6 @@ export default {
 	}
 }
 .contact-container {
-	padding: 0 10px;
+	padding: 10px 10px;
 }
 </style>

@@ -1,25 +1,37 @@
 <template>
-	<Pager></Pager>
+	<div class="app-container">
+		<Layout>
+			<template v-slot:left>
+				<div class="left">
+					<SiteAside />
+				</div>
+			</template>
+			<RouterView></RouterView>
+		</Layout>
+	</div>
 </template>
 <script>
-import Pager from "./components/Empty/index.vue";
+import Layout from "@/components/Layout";
+import SiteAside from "@/components/SiteAside";
+
 export default {
 	components: {
-		Pager,
-	},
-	data() {
-		return {
-			current: 10,
-			total: 300,
-		};
-	},
-	methods: {
-		handleChangePage(newPage) {
-			console.log(newPage);
-			this.current = newPage;
-		},
+		Layout,
+		SiteAside,
 	},
 };
 </script>
 
-<style></style>
+<style scoped lang="less">
+@import "~@/styles/mixin.less";
+@import "~@/styles/var.less";
+.app-container {
+	.self-full(fixed);
+	height: 100vh;
+	.left {
+		width: 220px;
+		height: 100%;
+		background-color: @dark;
+	}
+}
+</style>

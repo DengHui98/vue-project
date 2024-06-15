@@ -2,14 +2,16 @@
 	<div class="menu-container">
 		<ul>
 			<template v-for="item in menuList">
-				<li
-					:class="{ select: isSelected(item) }"
-					:key="item.path"
-				>
-					<a :href="item.path">
+				<li :key="item.path">
+					<RouterLink
+						:exact="item.exact"
+						:to="{ name: item.name }"
+						active-class="select"
+						exact-active-class=""
+					>
 						<Icon :type="item.icon" />
-						<span>{{ item.name }}</span>
-					</a>
+						<span>{{ item.title }}</span>
+					</RouterLink>
 				</li>
 			</template>
 		</ul>
@@ -26,43 +28,37 @@ export default {
 		return {
 			menuList: [
 				{
-					name: "首页",
-					path: "/",
+					title: "首页",
+					name: "Home",
 					icon: "home",
+					exact: true,
 				},
 				{
-					name: "文章",
-					path: "/bolg",
+					title: "文章",
+					name: "Blog",
 					icon: "bolg",
-					startsWith: true,
+					exact: false,
 				},
 				{
-					name: "关于我",
-					path: "/about",
+					title: "关于我",
+					name: "About",
 					icon: "about",
+					exact: true,
 				},
 				{
-					name: "项目",
-					path: "/project",
+					title: "项目",
+					name: "Project",
 					icon: "project",
+					exact: true,
 				},
 				{
-					name: "留言板",
-					path: "/message",
+					title: "留言板",
+					name: "Message",
 					icon: "message",
+					exact: true,
 				},
 			],
 		};
-	},
-	methods: {
-		isSelected(item) {
-			const path = location.pathname.toUpperCase();
-			const selectPath = item.path.toUpperCase();
-			if (item.startsWith) {
-				return path.startsWith(selectPath);
-			}
-			return selectPath === path;
-		},
 	},
 };
 </script>
@@ -70,8 +66,6 @@ export default {
 <style scoped lang="less">
 @import url(~@/styles/var.less);
 .menu-container {
-	color: @words;
-
 	li {
 		height: 46px;
 		line-height: 46px;
@@ -82,15 +76,15 @@ export default {
 			height: 100%;
 			display: inline-block;
 			padding: 0 20px;
-		}
 
-		&:hover {
-			color: @primary !important;
-		}
+			&:hover {
+				color: @primary;
+			}
 
-		&.select {
-			color: @lightWords;
-			background: darken(@words, 2%);
+			&.select {
+				color: @primary;
+				background: darken(@words, 2%);
+			}
 		}
 
 		.icon-container {
