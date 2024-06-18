@@ -20,6 +20,8 @@ const classMap = {
 	bolg: "icon-bokeyuan",
 	message: "icon-liuyanban-05",
 	project: "icon-xiangmu_xiangmuguanli",
+	success: "icon-success",
+	fail: "icon-fail",
 };
 export const types = Object.keys(classMap);
 
@@ -32,7 +34,6 @@ export default {
 	},
 	computed: {
 		iconClass() {
-			console.log(classMap[this.type]);
 			return classMap[this.type];
 		},
 	},
@@ -40,5 +41,5 @@ export default {
 </script>
 
 <style scoped>
-@import url(//at.alicdn.com/t/c/font_4581694_pe98d16lc5i.css);
+@import url(//at.alicdn.com/t/c/font_4581694_u9y2xdtcg3.css);
 </style>
